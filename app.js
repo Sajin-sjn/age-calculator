@@ -52,12 +52,18 @@ let handleClick = (event) => {
         return;
     } else if (inputDay > 31) {
         dayAlert.textContent = "Must be a valid Day";
+        monthAlert.textContent = "";
+        yearAlert.textContent = "";
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
+        monthAlert.textContent = "";
+        yearAlert.textContent = "";
         return;
     } else if (inputMonth > 12) {
         monthAlert.textContent = "Must be a valid Month";
+        dayAlert.textContent = "";
+        yearAlert.textContent = "";
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
@@ -67,8 +73,10 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
+        dayAlert.textContent = "";
+        monthAlert.textContent = "";
         return;
-    } else {
+    }  else {
             dayAlert.textContent = "";
             monthAlert.textContent = "";
             yearAlert.textContent = "";
@@ -83,7 +91,6 @@ let handleClick = (event) => {
                 }
             }
             paraMonths.textContent = monthCount - 1;
-            
             
             const totalYears = currentYear - inputYear;
             if (currentMonth < inputMonth) {
