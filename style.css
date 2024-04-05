@@ -117,9 +117,19 @@ body {
 p.dayAlert,p.monthAlert,p.yearAlert {
     font-family: var(--ff-pi);
     font-size: 9px;
+    color: red;
 }
 .height {
     height: 5em;
+}
+.input-day.invalid {
+    border-color: red;
+}
+.input-month.invalid {
+    border-color: red;
+}
+.input-year.invalid {
+    border-color: red;
 }
 
 @media (max-width: 37em) {
