@@ -1,0 +1,168 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('assets/fonts/Poppins-Bold.ttf') format('truetype');
+    /* Add more src lines for different font weights or styles */
+}
+@font-face {
+    font-family: 'Poppins-BoldItalic';
+    src: url('assets/fonts/Poppins-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins-ExtraBold';
+    src: url('assets/fonts/Poppins-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins-ExtraBoldItalic';
+    src: url('assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins-Italic';
+    src: url('assets/fonts/Poppins-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+:root {
+    --ff-pb: 'Poppins-Bold';
+    --ff-pbi: 'Poppins-BoldItalic';
+    --ff-peb: 'Poppins-ExtraBold';
+    --ff-pebi: 'Poppins-ExtraBoldItalic';
+    --ff-pi: 'Poppins-Italic';
+    --ff-pr: 'Poppins-Regular';
+
+    --fw-400: 400;
+    --fw-700: 700;
+    --fw-800: 800;
+
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smoke-grey: hsl(0, 1%, 44%);
+    --purple: hsl(259, 100%, 65%);
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+body {
+    background-color: var(--off-white);
+    
+}
+.wrapper {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+}
+.container {
+    background-color: white;
+    padding: 2rem;
+    width: 36em;
+    border-top-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 8rem;
+    border-bottom-left-radius: 1rem;
+}
+.dob {
+    gap: 1.5rem;
+}
+.dob .label {
+    font-family: var(--ff-pb);
+    font-size: 12px;
+    color: var(--smoke-grey);
+    letter-spacing: 2px;
+}
+.dob input {
+    outline: none;
+    border: 1px solid var(--light-grey);
+    width: 6.5rem;
+    height: 3rem;
+    font-size: 20px;
+    font-family: var(--ff-pb);
+    border-radius: 4px;
+    padding-left: 12px;
+}
+.divider .line {
+    width: 100%;
+    border: 0.2px solid var(--off-white);
+}
+.divider img {
+    background-color: var(--light-grey);
+    cursor: pointer;
+}
+.display-days,.display-months,.display-years {
+    gap: 0.5rem;
+}
+.age p {
+    color: var(--purple);
+    font-family: var(--ff-pbi);
+    font-size: 4em;
+}
+.age h1 {
+    font-size: 4em;
+    font-family: var(--ff-pebi);
+}
+.para {
+    font-size: 80px;
+}
+.common-height {
+    height: 60px;
+}
+p.dayAlert,p.monthAlert,p.yearAlert {
+    font-family: var(--ff-pi);
+    font-size: 9px;
+}
+.height {
+    height: 5em;
+}
+
+@media (max-width: 37em) {
+    .container {
+        width: 30em;
+        padding: 20px;
+        position: relative;
+    }
+    .divider {
+        margin-top: 40px;
+    }
+    .divider hr {
+        z-index: 1;
+        position: absolute;
+    }
+    .divider img {
+        position: absolute;
+        left: 50%;
+        top: 35%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        opacity: 1;
+    }
+    .age {
+        margin-top: 30px;
+    }
+    
+}
+
+@media (max-width: 490px) {
+    .container {
+        width: 360px;
+    }
+    .age {
+        margin-top: 25px;
+    }
+    .dob input {
+        width: 5.5rem;
+    }
+    .divider img {
+        top: 36%;
+    }
+    .age h1 {
+        font-size: 3em;
+    }
+}
