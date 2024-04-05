@@ -38,48 +38,40 @@ let handleClick = (event) => {
         monthAlert.textContent = "Must be a valid Month";
         yearAlert.textContent = "Must be a valid Year";
         return;
-    } else {
-        dayAlert.textContent = "";
-        monthAlert.textContent = "";
-        yearAlert.textContent = "";
-        let bornMonth = inputMonth;
-        let monthCount = 0;
-        while (bornMonth !== currentMonth) {
-            bornMonth++;
-            monthCount++;
-            if (bornMonth === 12) {
-                bornMonth = 1;
-                monthCount++;
-            }
-        }
-        paraMonths.textContent = monthCount - 1;
-        
-        
-        const totalYears = currentYear - inputYear;
-        if (currentMonth < inputMonth) {
-            paraYears.textContent = totalYears - 1;
-        } else {
-            paraYears.textContent = totalYears;
-        } 
-        paraDays.textContent = currentDayOfMonth;
-    }
-    if (inputDay > 31) {
+    } else if (inputDay > 31) {
         dayAlert.textContent = "Must be a valid Day";
         return;
-    } else {
-        dayAlert.textContent = "";
-    } if (inputMonth > 12) {
+    } else if (inputMonth > 12) {
         monthAlert.textContent = "Must be a valid Month";
         return;
-    } else {
-        monthAlert.textContent = "";
-    }
-    if (inputYear > currentYear) {
+    } else if (inputYear > currentYear) {
         yearAlert.textContent = "Must be a valid Year";
         return;
     } else {
-        yearAlert.textContent = "";
-        return;
+            dayAlert.textContent = "";
+            monthAlert.textContent = "";
+            yearAlert.textContent = "";
+            let bornMonth = inputMonth;
+            let monthCount = 0;
+            while (bornMonth !== currentMonth) {
+                bornMonth++;
+                monthCount++;
+                if (bornMonth === 12) {
+                    bornMonth = 1;
+                    monthCount++;
+                }
+            }
+            paraMonths.textContent = monthCount - 1;
+            
+            
+            const totalYears = currentYear - inputYear;
+            if (currentMonth < inputMonth) {
+                paraYears.textContent = totalYears - 1;
+            } else {
+                paraYears.textContent = totalYears;
+            } 
+            paraDays.textContent = currentDayOfMonth;
+
     }
 }
 
