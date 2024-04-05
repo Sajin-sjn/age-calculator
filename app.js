@@ -22,30 +22,51 @@ let handleClick = (event) => {
         dayAlert.textContent = "Must be a valid Day";
         monthAlert.textContent = "Must be a valid Month";
         yearAlert.textContent = "Must be a valid Year";
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
         return;
     } else if (inputDay > 31 && inputMonth > 12) {
         dayAlert.textContent = "Must be a valid Day";
         monthAlert.textContent = "Must be a valid Month";
         yearAlert.textContent = "";
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
         return;
     } else if (inputDay > 31 && inputYear > currentYear) {
         dayAlert.textContent = "Must be a valid Day";
         monthAlert.textContent = "";
         yearAlert.textContent = "Must be a valid Year";
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
         return;
     } else if (inputMonth > 12 && inputYear > currentYear) {
         dayAlert.textContent = "";
         monthAlert.textContent = "Must be a valid Month";
         yearAlert.textContent = "Must be a valid Year";
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
         return;
     } else if (inputDay > 31) {
         dayAlert.textContent = "Must be a valid Day";
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
         return;
     } else if (inputMonth > 12) {
         monthAlert.textContent = "Must be a valid Month";
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
         return;
     } else if (inputYear > currentYear) {
         yearAlert.textContent = "Must be a valid Year";
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
         return;
     } else {
             dayAlert.textContent = "";
