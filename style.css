@@ -68,6 +68,7 @@ body {
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 8rem;
     border-bottom-left-radius: 1rem;
+    margin: 20px;
 }
 .dob {
     gap: 1.5rem;

@@ -30,6 +30,9 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
+        enteredDay.classList.add('invalid');
+        enteredMonth.classList.add('invalid');
+        enteredYear.classList.add('invalid');
         return;
     } else if (inputDay > 31 && inputMonth > 12) {
         dayAlert.textContent = "Must be a valid Day";
@@ -38,7 +41,9 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
-        
+        enteredDay.classList.add('invalid');
+        enteredMonth.classList.add('invalid');
+        enteredYear.classList.remove('invalid');
         return;
     } else if (inputDay > 31 && inputYear > currentYear) {
         dayAlert.textContent = "Must be a valid Day";
@@ -47,6 +52,9 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
+        enteredDay.classList.add('invalid');
+        enteredYear.classList.add('invalid');
+        enteredMonth.classList.remove('invalid');
         return;
     } else if (inputMonth > 12 && inputYear > currentYear) {
         dayAlert.textContent = "";
@@ -55,7 +63,9 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
-        
+        enteredMonth.classList.add('invalid');
+        enteredYear.classList.add('invalid');
+        enteredDay.classList.remove('invalid');
         return;
     } else if (inputDay > 31) {
         dayAlert.textContent = "Must be a valid Day";
@@ -66,7 +76,9 @@ let handleClick = (event) => {
         paraDays.textContent = "--";
         monthAlert.textContent = "";
         yearAlert.textContent = "";
-        
+        enteredDay.classList.add('invalid');
+        enteredMonth.classList.remove('invalid');
+        enteredYear.classList.remove('invalid');
         return;
     } else if (inputMonth > 12) {
         monthAlert.textContent = "Must be a valid Month";
@@ -75,7 +87,9 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
-        
+        enteredMonth.classList.add('invalid');
+        enteredDay.classList.remove('invalid');
+        enteredYear.classList.remove('invalid');
         return;
     } else if (inputYear > currentYear) {
         yearAlert.textContent = "Must be a valid Year";
@@ -84,24 +98,54 @@ let handleClick = (event) => {
         paraDays.textContent = "--";
         dayAlert.textContent = "";
         monthAlert.textContent = "";
-        
+        enteredYear.classList.add('invalid');
+        enteredDay.classList.remove('invalid');
+        enteredMonth.classList.remove('invalid');
         return;
-    }  else {
+    } else if(inputDay === "" && inputMonth === "" && inputYear === "") {
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
+        enteredDay.classList.remove('invalid');
+        enteredMonth.classList.remove('invalid');
+        enteredYear.classList.remove('invalid');
+        dayAlert.textContent = "";
+        monthAlert.textContent = "";
+        yearAlert.textContent = "";
+        return;
+    } else if(inputDay === "" || inputMonth === "" || inputYear === "") {
+        paraYears.textContent = "--";
+        paraMonths.textContent = "--";
+        paraDays.textContent = "--";
+        enteredDay.classList.remove('invalid');
+        enteredMonth.classList.remove('invalid');
+        enteredYear.classList.remove('invalid');
+        dayAlert.textContent = "";
+        monthAlert.textContent = "";
+        yearAlert.textContent = "";
+        return;
+    } else {
+            enteredDay.classList.remove('invalid');
+            enteredMonth.classList.remove('invalid');
+            enteredYear.classList.remove('invalid');
             dayAlert.textContent = "";
             monthAlert.textContent = "";
             yearAlert.textContent = "";
+
             let bornMonth = inputMonth;
             let monthCount = 0;
-            while (bornMonth !== currentMonth) {
+            
+            while (currentMonth != bornMonth) {
                 bornMonth++;
                 monthCount++;
-                if (bornMonth === 12) {
+                if (bornMonth === 13) {
                     bornMonth = 1;
-                    monthCount++;
                 }
+            } 
+            paraMonths.textContent = monthCount;
+            if (paraMonths.textContent < 0) {
+                paraMonths.textContent = 0;
             }
-            paraMonths.textContent = monthCount - 1;
-            
             const totalYears = currentYear - inputYear;
             if (currentMonth < inputMonth) {
                 paraYears.textContent = totalYears - 1;
@@ -109,10 +153,6 @@ let handleClick = (event) => {
                 paraYears.textContent = totalYears;
             } 
             paraDays.textContent = currentDayOfMonth;
-
     }
 }
-
-    
-
 btn.addEventListener("click", handleClick);
