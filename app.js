@@ -30,9 +30,6 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
-        enteredDay.classList.toggle('invalid');
-        enteredMonth.classList.toggle('invalid');
-        enteredYear.classList.toggle('invalid');
         return;
     } else if (inputDay > 31 && inputMonth > 12) {
         dayAlert.textContent = "Must be a valid Day";
@@ -41,8 +38,7 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
-        enteredDay.classList.toggle('invalid');
-        enteredMonth.classList.toggle('invalid');
+        
         return;
     } else if (inputDay > 31 && inputYear > currentYear) {
         dayAlert.textContent = "Must be a valid Day";
@@ -51,8 +47,6 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
-        enteredDay.classList.toggle('invalid');
-        enteredYear.classList.toggle('invalid');
         return;
     } else if (inputMonth > 12 && inputYear > currentYear) {
         dayAlert.textContent = "";
@@ -61,8 +55,7 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
-        enteredMonth.classList.toggle('invalid');
-        enteredYear.classList.toggle('invalid');
+        
         return;
     } else if (inputDay > 31) {
         dayAlert.textContent = "Must be a valid Day";
@@ -73,7 +66,7 @@ let handleClick = (event) => {
         paraDays.textContent = "--";
         monthAlert.textContent = "";
         yearAlert.textContent = "";
-        enteredDay.classList.toggle('invalid');
+        
         return;
     } else if (inputMonth > 12) {
         monthAlert.textContent = "Must be a valid Month";
@@ -82,7 +75,7 @@ let handleClick = (event) => {
         paraYears.textContent = "--";
         paraMonths.textContent = "--";
         paraDays.textContent = "--";
-        enteredMonth.classList.toggle('invalid')
+        
         return;
     } else if (inputYear > currentYear) {
         yearAlert.textContent = "Must be a valid Year";
@@ -91,7 +84,7 @@ let handleClick = (event) => {
         paraDays.textContent = "--";
         dayAlert.textContent = "";
         monthAlert.textContent = "";
-        enteredYear.classList.toggle('invalid')
+        
         return;
     }  else {
             dayAlert.textContent = "";
