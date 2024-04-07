@@ -160,7 +160,7 @@ let handleClick = (event) => {
                     totalNumberOfDays = currentDayOfMonth - inputDay;
                 } else {
                     totalNumberOfDays = (daysInMonth - inputDay) + currentDayOfMonth;
-                    monthCount = 11;
+                    monthCount = 10;
                 }
             } else {
                 totalNumberOfDays = (daysInMonth - inputDay) + currentDayOfMonth;
