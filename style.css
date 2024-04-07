@@ -51,7 +51,7 @@
 }
 body {
     background-color: var(--off-white);
-    
+    overflow-y: hidden;
 }
 .wrapper {
     height: 100vh;
@@ -68,10 +68,10 @@ body {
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 8rem;
     border-bottom-left-radius: 1rem;
-    margin: 20px;
 }
-.dob {
-    gap: 1.5rem;
+.date-of-birth {
+    gap: 1.8rem;
+    
 }
 .dob .label {
     font-family: var(--ff-pb);
@@ -149,7 +149,7 @@ p.dayAlert,p.monthAlert,p.yearAlert {
     .divider img {
         position: absolute;
         left: 50%;
-        top: 35%;
+        top: 37.5%;
         transform: translate(-50%,-50%);
         z-index: 2;
         opacity: 1;
@@ -171,9 +171,12 @@ p.dayAlert,p.monthAlert,p.yearAlert {
         width: 5.5rem;
     }
     .divider img {
-        top: 36%;
+        top: 41%;
     }
     .age h1 {
         font-size: 3em;
+    }
+    .height {
+        height: 6em;
     }
 }
