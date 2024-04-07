@@ -51,7 +51,7 @@
 }
 body {
     background-color: var(--off-white);
-    overflow-y: hidden;
+    overflow: hidden;
 }
 .wrapper {
     height: 100vh;
@@ -68,10 +68,10 @@ body {
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 8rem;
     border-bottom-left-radius: 1rem;
+    margin: 20px;
 }
 .date-of-birth {
-    gap: 1.8rem;
-    
+    gap: 1.7rem;
 }
 .dob .label {
     font-family: var(--ff-pb);
@@ -171,12 +171,13 @@ p.dayAlert,p.monthAlert,p.yearAlert {
         width: 5.5rem;
     }
     .divider img {
-        top: 41%;
+        top: 40.5%;
     }
     .age h1 {
         font-size: 3em;
     }
     .height {
         height: 6em;
+        width: 5em;
     }
 }

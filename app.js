@@ -21,6 +21,14 @@ let handleClick = (event) => {
     const currentYear = currentDate.getFullYear();
     const currentMonth = currentDate.getMonth() + 1;
     const currentDayOfMonth = currentDate.getDate();
+    
+    let daysInMonth;
+    
+    if (inputMonth < currentMonth) {
+        daysInMonth = new Date(currentYear, inputMonth, 0).getDate();
+    } else {
+        daysInMonth = new Date(currentYear - 1, inputMonth, 0).getDate();
+    }
 
     
     if (inputDay > 31 && inputMonth > 12 && inputYear > currentYear) {
@@ -134,25 +142,65 @@ let handleClick = (event) => {
 
             let bornMonth = inputMonth;
             let monthCount = 0;
+            let totalNumberOfDays;
             
             while (currentMonth != bornMonth) {
-                bornMonth++;
-                monthCount++;
-                if (bornMonth === 13) {
+                
+                if (bornMonth == 13) {
                     bornMonth = 1;
                 }
+                bornMonth++;
+                monthCount++;
             } 
-            paraMonths.textContent = monthCount;
-            if (paraMonths.textContent < 0) {
+
+
+            if (inputMonth == currentMonth) {
+                
+                if (inputDay <= currentDayOfMonth) {
+                    totalNumberOfDays = currentDayOfMonth - inputDay;
+                } else {
+                    totalNumberOfDays = (daysInMonth - inputDay) + currentDayOfMonth;
+                    monthCount = 11;
+                }
+            } else {
+                totalNumberOfDays = (daysInMonth - inputDay) + currentDayOfMonth;
+                console.log(totalNumberOfDays)
+            }
+            
+            if (inputMonth > currentMonth && totalNumberOfDays >= 31) {
+                totalNumberOfDays -= 31;
+                paraMonths.textContent = monthCount;
+            } else if (inputMonth > currentMonth && totalNumberOfDays < 31) {
+                console.log(monthCount)
+                paraMonths.textContent = monthCount - 1;
+            } else if (inputMonth > currentMonth) {
+                paraMonths.textContent = monthCount;
+            } else if (totalNumberOfDays >= 31) {
+                totalNumberOfDays -= 31;
+                paraMonths.textContent = monthCount - 1;
+            } else  {
+                paraMonths.textContent = monthCount;
+            }
+            if(paraMonths.textContent < 0) {
                 paraMonths.textContent = 0;
             }
+
+            paraDays.textContent = totalNumberOfDays;
+
+
             const totalYears = currentYear - inputYear;
-            if (currentMonth < inputMonth) {
+            if (inputMonth > currentMonth) {
                 paraYears.textContent = totalYears - 1;
             } else {
-                paraYears.textContent = totalYears;
+                if (inputDay < currentDayOfMonth) {
+                    paraYears.textContent = totalYears;
+                } else {
+                    paraYears.textContent = totalYears - 1;
+                }
             } 
-            paraDays.textContent = currentDayOfMonth;
+
+        
+            
     }
 }
 btn.addEventListener("click", handleClick);
