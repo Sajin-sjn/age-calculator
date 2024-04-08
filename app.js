@@ -164,7 +164,6 @@ let handleClick = (event) => {
                 }
             } else {
                 totalNumberOfDays = (daysInMonth - inputDay) + currentDayOfMonth;
-                console.log(totalNumberOfDays)
             }
             
             if (inputMonth > currentMonth && totalNumberOfDays >= 31) {
